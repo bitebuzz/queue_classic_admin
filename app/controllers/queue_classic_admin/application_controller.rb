@@ -1,5 +1,11 @@
 module QueueClassicAdmin
   class ApplicationController < ActionController::Base
+    http_basic_authenticate_with(
+      name: ENV['Q_ADMIN_USER'] || 'admin',
+      password: ENV['Q_ADMIN_PASSWORD'] || 'qAdm1nPassw0rd',
+      realm: 'GNIP streamer queues admin interface'
+    )
+
     protected
     def filter_jobs
       @queue_classic_jobs = QueueClassicJob.order("id DESC")
