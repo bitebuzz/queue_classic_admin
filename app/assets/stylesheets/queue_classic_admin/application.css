@@ -9,7 +9,6 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require qc-admin-bootstrap/bootstrap.min
  *= require_tree .
  */
 
